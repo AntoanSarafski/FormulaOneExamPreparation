@@ -61,7 +61,7 @@ namespace Formula1.Models
 
         public void AddCar(IFormulaOneCar car)
         {
-            throw new NotImplementedException();
+            CanRace = true;
         }
 
         public void WinRace()
