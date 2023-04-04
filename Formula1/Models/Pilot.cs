@@ -14,7 +14,10 @@ namespace Formula1.Models
         private IFormulaOneCar car;
         private int numberOfWins;
 
-
+        public Pilot(string fullName)
+        {
+            FullName = fullName;
+        }
         public string FullName
         {
             get { return fullName; }
@@ -61,12 +64,20 @@ namespace Formula1.Models
 
         public void AddCar(IFormulaOneCar car)
         {
+            Car = car;
             CanRace = true;
         }
 
         public void WinRace()
         {
-            throw new NotImplementedException();
+            NumberOfWins++;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Pilot {FullName} has {NumberOfWins} wins.");
+            return sb.ToString().Trim();
         }
     }
 }
